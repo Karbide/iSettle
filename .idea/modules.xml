@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/iSettle.iml" filepath="$PROJECT_DIR$/iSettle.iml" />
+      <module fileurl="file://$PROJECT_DIR$/iSettleapi/iSettle-api.iml" filepath="$PROJECT_DIR$/iSettleapi/iSettle-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/iSettlecore/iSettle-core.iml" filepath="$PROJECT_DIR$/iSettlecore/iSettle-core.iml" />
+      <module fileurl="file://$PROJECT_DIR$/iSettleweb/iSettle-web.iml" filepath="$PROJECT_DIR$/iSettleweb/iSettle-web.iml" />
+      <module fileurl="file://$PROJECT_DIR$/iSettlewebadmin/iSettle-web-admin.iml" filepath="$PROJECT_DIR$/iSettlewebadmin/iSettle-web-admin.iml" />
+    </modules>
+  </component>
+</project>
