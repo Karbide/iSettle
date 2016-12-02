@@ -30,10 +30,10 @@
 	</properties>
 
 	<modules>
-		<module>iSettlecore</module>
-		<module>iSettleweb</module>
-		<module>iSettlewebadmin</module>
-		<module>iSettleapi</module>
+		<module>iSettle-core</module>
+		<module>iSettle-web</module>
+		<module>iSettle-web-admin</module>
+		<module>iSettle-api</module>
 	</modules>
 
 
