@@ -36,7 +36,7 @@ public class SecurityConfig1 extends WebSecurityConfigurerAdapter {
         http
                 .headers()
                 .frameOptions()
-                .sameOrigin();
+                .disable();
     }
 
     /*@Override
