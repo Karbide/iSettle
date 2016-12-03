@@ -1,9 +1,6 @@
 package com.iSettle.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.Date;
 
 /**
@@ -19,6 +16,7 @@ public class TransactionMaster {
     private String currency_code;
     private Date create_time;
     private Date update_time;
+    private CurrencyMaster currencyMaster;
 
     public Long getTrn_id() {
         return trn_id;
@@ -58,5 +56,15 @@ public class TransactionMaster {
 
     public void setUpdate_time(Date update_time) {
         this.update_time = update_time;
+    }
+
+    @ManyToOne(cascade = CascadeType.ALL,fetch = FetchType.EAGER)
+    @JoinColumn(name = "currency_code")
+    public CurrencyMaster getCurrencyMaster() {
+        return currencyMaster;
+    }
+
+    public void setCurrencyMaster(CurrencyMaster currencyMaster) {
+        this.currencyMaster = currencyMaster;
     }
 }

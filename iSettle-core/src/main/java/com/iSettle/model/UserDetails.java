@@ -1,9 +1,6 @@
 package com.iSettle.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
 
@@ -25,6 +22,8 @@ public class UserDetails implements Serializable{
     private Long status;
     private Date create_time;
     private Date update_time;
+
+    private UserStatus userStatus;
 
     public Long getId() {
         return id;
@@ -106,6 +105,31 @@ public class UserDetails implements Serializable{
         this.update_time = update_time;
     }
 
+    @ManyToOne(cascade = CascadeType.ALL,fetch = FetchType.EAGER)
+    @JoinColumn(name = "status")
+    public UserStatus getUserStatus() {
+        return userStatus;
+    }
+
+    public void setUserStatus(UserStatus userStatus) {
+        this.userStatus = userStatus;
+    }
+
+   @PrePersist
+    protected void insertDates() {
+        if (create_time == null) {
+            create_time = new Date();
+            update_time = new Date();
+            last_login = new Date();
+        }
+    }
+
+    /*@PreUpdate
+    protected void updateDates() {
+        if (updatedTime == null) {
+            updatedTime = new Date();
+        }
+    }*/
     @Override
     public String toString() {
         return "UserDetails{" +

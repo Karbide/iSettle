@@ -32,8 +32,6 @@ public class RegistrationController {
         //Card created = service.create(card);
         LOGGER.info("Registration Request-"+userDetails);
         userDetails.setStatus(1l);
-        userDetails.setCreate_time(new Date());
-        userDetails.setUpdate_time(new Date());
         userDetails.setAcc_id(System.currentTimeMillis());
         userDetails = userDetailsRepository.save(userDetails);
 

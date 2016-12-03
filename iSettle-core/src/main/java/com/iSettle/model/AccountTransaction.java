@@ -1,8 +1,6 @@
 package com.iSettle.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
 
@@ -28,6 +26,9 @@ public class AccountTransaction implements Serializable{
     private String trn_notes;
     private Date update_time;
     private Date create_time;
+    private TransactionType transactionType;
+    private TransactionCategory transactionCategory;
+    private TransactionStatus transactionStatus;
 
     public Long getId() {
         return id;
@@ -139,5 +140,35 @@ public class AccountTransaction implements Serializable{
 
     public void setCreate_time(Date create_time) {
         this.create_time = create_time;
+    }
+
+    @ManyToOne(cascade = CascadeType.ALL,fetch = FetchType.EAGER)
+    @JoinColumn(name = "trn_type")
+    public TransactionType getTransactionType() {
+        return transactionType;
+    }
+
+    public void setTransactionType(TransactionType transactionType) {
+        this.transactionType = transactionType;
+    }
+
+    @ManyToOne(cascade = CascadeType.ALL,fetch = FetchType.EAGER)
+    @JoinColumn(name = "trn_category")
+    public TransactionCategory getTransactionCategory() {
+        return transactionCategory;
+    }
+
+    public void setTransactionCategory(TransactionCategory transactionCategory) {
+        this.transactionCategory = transactionCategory;
+    }
+
+    @ManyToOne(cascade = CascadeType.ALL,fetch = FetchType.EAGER)
+    @JoinColumn(name = "trn_status")
+    public TransactionStatus getTransactionStatus() {
+        return transactionStatus;
+    }
+
+    public void setTransactionStatus(TransactionStatus transactionStatus) {
+        this.transactionStatus = transactionStatus;
     }
 }

@@ -2,11 +2,11 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/iSettle.iml" filepath="$PROJECT_DIR$/iSettle.iml" />
       <module fileurl="file://$PROJECT_DIR$/iSettle-api/iSettle-api.iml" filepath="$PROJECT_DIR$/iSettle-api/iSettle-api.iml" />
       <module fileurl="file://$PROJECT_DIR$/iSettle-core/iSettle-core.iml" filepath="$PROJECT_DIR$/iSettle-core/iSettle-core.iml" />
       <module fileurl="file://$PROJECT_DIR$/iSettle-web/iSettle-web.iml" filepath="$PROJECT_DIR$/iSettle-web/iSettle-web.iml" />
       <module fileurl="file://$PROJECT_DIR$/iSettle-web-admin/iSettle-web-admin.iml" filepath="$PROJECT_DIR$/iSettle-web-admin/iSettle-web-admin.iml" />
-      <module fileurl="file://$PROJECT_DIR$/isettle.iml" filepath="$PROJECT_DIR$/isettle.iml" />
     </modules>
   </component>
 </project>
