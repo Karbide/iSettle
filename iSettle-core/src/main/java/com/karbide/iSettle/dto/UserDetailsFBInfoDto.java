@@ -11,8 +11,10 @@ import java.util.List;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class UserDetailsFBInfoDto {
 
+    private Long userId;
     private String name;
     private String picture;
+    private String ph_no;
 
     public String getName() {
         return name;
@@ -28,5 +30,21 @@ public class UserDetailsFBInfoDto {
 
     public void setPicture(String picture) {
         this.picture = picture;
+    }
+
+    public Long getUserId() {
+        return userId;
+    }
+
+    public void setUserId(Long userId) {
+        this.userId = userId;
+    }
+
+    public String getPh_no() {
+        return ph_no;
+    }
+
+    public void setPh_no(String ph_no) {
+        this.ph_no = ph_no;
     }
 }

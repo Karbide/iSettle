@@ -17,7 +17,6 @@ public class UserDeviceInfo implements Serializable {
     private Long id;
     private Long userid;
     private String device_id;
-    private String ph_no;
     private String device_google_code;
     private String device_imei;
     private String device_adv_id;
@@ -49,14 +48,6 @@ public class UserDeviceInfo implements Serializable {
 
     public void setDevice_id(String device_id) {
         this.device_id = device_id;
-    }
-
-    public String getPh_no() {
-        return ph_no;
-    }
-
-    public void setPh_no(String ph_no) {
-        this.ph_no = ph_no;
     }
 
     public String getDevice_google_code() {

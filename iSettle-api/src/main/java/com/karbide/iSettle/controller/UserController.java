@@ -32,7 +32,7 @@ public class UserController {
     private UserService userService;
 
     @ResponseStatus(HttpStatus.OK)
-    @ApiOperation(value = "Registion time Hit", notes = "Only Send the 'email,login_app_id,name,picture' paramter")
+    @ApiOperation(value = "Registion time Hit", notes = "Send the userId and get the data for Landing page")
     @RequestMapping(method = RequestMethod.GET, value = "/{userId}")
     public UserAccountDto user(@PathVariable("userId") Long userId) {
         LOGGER.info("User GET Request userId-"+userId);

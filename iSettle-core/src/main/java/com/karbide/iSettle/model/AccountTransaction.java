@@ -31,7 +31,7 @@ public class AccountTransaction implements Serializable{
     private String trn_notes;
     private Date update_time;
     private Date create_time;
-    private String currency_code;
+    private int currency_code;
     private TransactionType transactionType;
     private TransactionCategory transactionCategory;
     private TransactionStatus transactionStatus;

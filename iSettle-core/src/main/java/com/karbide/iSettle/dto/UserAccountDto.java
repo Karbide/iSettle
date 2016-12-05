@@ -12,7 +12,7 @@ import java.util.List;
 public class UserAccountDto {
     List<AmountCurrencyMap> amountCurrencyMapsGive;
     List<AmountCurrencyMap> amountCurrencyMapsTake;
-    List<AccountTransaction> accountTransactions;
+    List<AccountTransactionDto> accountTransactionsDto;
     List<UserDetailsFBInfoDto> userDetailsFBInfoDtos;
 
     public List<AmountCurrencyMap> getAmountCurrencyMapsGive() {
@@ -31,12 +31,12 @@ public class UserAccountDto {
         this.amountCurrencyMapsTake = amountCurrencyMapsTake;
     }
 
-    public List<AccountTransaction> getAccountTransactions() {
-        return accountTransactions;
+    public List<AccountTransactionDto> getAccountTransactionsDto() {
+        return accountTransactionsDto;
     }
 
-    public void setAccountTransactions(List<AccountTransaction> accountTransactions) {
-        this.accountTransactions = accountTransactions;
+    public void setAccountTransactionsDto(List<AccountTransactionDto> accountTransactionsDto) {
+        this.accountTransactionsDto = accountTransactionsDto;
     }
 
     public List<UserDetailsFBInfoDto> getUserDetailsFBInfoDtos() {

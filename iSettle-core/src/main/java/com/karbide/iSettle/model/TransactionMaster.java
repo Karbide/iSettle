@@ -13,7 +13,7 @@ public class TransactionMaster {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long trn_id;
     private boolean active;
-    private String currency_code;
+    private int currency_code;
     private Date create_time;
     private Date update_time;
     private CurrencyMaster currencyMaster;
@@ -34,11 +34,11 @@ public class TransactionMaster {
         this.active = active;
     }
 
-    public String getCurrency_code() {
+    public int getCurrency_code() {
         return currency_code;
     }
 
-    public void setCurrency_code(String currency_code) {
+    public void setCurrency_code(int currency_code) {
         this.currency_code = currency_code;
     }
 

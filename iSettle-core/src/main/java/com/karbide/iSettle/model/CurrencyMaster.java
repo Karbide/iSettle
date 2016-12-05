@@ -15,16 +15,16 @@ public class CurrencyMaster implements Serializable{
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long currency_code;
+    private int currency_code;
     private String currency_display_name;
     private boolean active;
     private Date update_time;
 
-    public Long getCurrency_code() {
+    public int getCurrency_code() {
         return currency_code;
     }
 
-    public void setCurrency_code(Long currency_code) {
+    public void setCurrency_code(int currency_code) {
         this.currency_code = currency_code;
     }
 

@@ -5,7 +5,7 @@ package com.karbide.iSettle.dto;
  */
 public class AmountCurrencyMap {
     private Float amt;
-    private Long currency_code;
+    private int currency_code;
 
     public Float getAmt() {
         return amt;
@@ -15,11 +15,11 @@ public class AmountCurrencyMap {
         this.amt = amt;
     }
 
-    public Long getCurrency_code() {
+    public int getCurrency_code() {
         return currency_code;
     }
 
-    public void setCurrency_code(Long currency_code) {
+    public void setCurrency_code(int currency_code) {
         this.currency_code = currency_code;
     }
 
@@ -30,12 +30,12 @@ public class AmountCurrencyMap {
 
         AmountCurrencyMap that = (AmountCurrencyMap) o;
 
-        return getCurrency_code() != null ? getCurrency_code().equals(that.getCurrency_code()) : that.getCurrency_code() == null;
+        return getCurrency_code() == that.getCurrency_code();
 
     }
 
     @Override
     public int hashCode() {
-        return getCurrency_code() != null ? getCurrency_code().hashCode() : 0;
+        return getCurrency_code();
     }
 }

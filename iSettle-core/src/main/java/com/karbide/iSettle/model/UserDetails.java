@@ -22,6 +22,7 @@ public class UserDetails implements Serializable{
     private Long status;
     private Date create_time;
     private Date update_time;
+    private String ph_no;
 
     private UserStatus userStatus;
 
@@ -101,8 +102,17 @@ public class UserDetails implements Serializable{
         return update_time;
     }
 
-    public void setUpdate_time(Date update_time) {
+    public void setUpdate_time(Date update_time)
+    {
         this.update_time = update_time;
+    }
+
+    public String getPh_no() {
+        return ph_no;
+    }
+
+    public void setPh_no(String ph_no) {
+        this.ph_no = ph_no;
     }
 
     @ManyToOne(cascade = CascadeType.ALL,fetch = FetchType.EAGER)
@@ -130,6 +140,7 @@ public class UserDetails implements Serializable{
             updatedTime = new Date();
         }
     }*/
+
     @Override
     public String toString() {
         return "UserDetails{" +
@@ -140,9 +151,11 @@ public class UserDetails implements Serializable{
                 ", picture='" + picture + '\'' +
                 ", acc_id=" + acc_id +
                 ", last_login=" + last_login +
-                ", status='" + status + '\'' +
+                ", status=" + status +
                 ", create_time=" + create_time +
                 ", update_time=" + update_time +
+                ", ph_no='" + ph_no + '\'' +
+                ", userStatus=" + userStatus +
                 '}';
     }
 }
