@@ -8,6 +8,11 @@ import java.util.Date;
  * Created by deepeshuniyal on 03/12/16.
  */
 @Entity
+@Table(
+        indexes = {
+                @Index(columnList = "src_acc_id", name = "src_acc_id"),
+                @Index(columnList = "tgt_acc_id", name = "tgt_acc_id")
+        })
 public class AccountTransaction implements Serializable{
 
     @Id
@@ -26,9 +31,11 @@ public class AccountTransaction implements Serializable{
     private String trn_notes;
     private Date update_time;
     private Date create_time;
+    private String currency_code;
     private TransactionType transactionType;
     private TransactionCategory transactionCategory;
     private TransactionStatus transactionStatus;
+    private CurrencyMaster currencyMaster;
 
     public Long getId() {
         return id;
@@ -170,5 +177,15 @@ public class AccountTransaction implements Serializable{
 
     public void setTransactionStatus(TransactionStatus transactionStatus) {
         this.transactionStatus = transactionStatus;
+    }
+
+    public CurrencyMaster getCurrencyMaster() {
+        return currencyMaster;
+    }
+
+    @ManyToOne(cascade = CascadeType.ALL,fetch = FetchType.EAGER)
+    @JoinColumn(name = "trn_status")
+    public void setCurrencyMaster(CurrencyMaster currencyMaster) {
+        this.currencyMaster = currencyMaster;
     }
 }

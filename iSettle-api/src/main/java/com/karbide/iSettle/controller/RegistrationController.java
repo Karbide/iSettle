@@ -30,7 +30,7 @@ public class RegistrationController {
         //Card created = service.create(card);
         LOGGER.info("Registration Request-"+userDetails);
         userDetails.setStatus(1l);
-        userDetails.setAcc_id(System.currentTimeMillis());
+        //userDetails.setAcc_id(System.currentTimeMillis());
         userDetails = userDetailsRepository.save(userDetails);
 
         return userDetails.getId();

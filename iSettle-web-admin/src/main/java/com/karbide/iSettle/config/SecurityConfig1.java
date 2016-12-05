@@ -1,6 +1,5 @@
 package com.karbide.iSettle.config;
 
-import com.karbide.iSettle.service.UserServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.security.SecurityProperties;
 import org.springframework.core.annotation.Order;
@@ -18,9 +17,6 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 @EnableGlobalMethodSecurity(securedEnabled = true)
 @Order(SecurityProperties.ACCESS_OVERRIDE_ORDER)
 public class SecurityConfig1 extends WebSecurityConfigurerAdapter {
-
-    @Autowired
-    UserServiceImpl service;
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
