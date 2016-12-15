@@ -14,16 +14,16 @@ public class TransactionType implements Serializable {
 
     @Id
     @GeneratedValue
-    private Long type;
+    private int type;
     private String type_display_name;
     private boolean active;
     private Date update_time;
 
-    public Long getType() {
+    public int getType() {
         return type;
     }
 
-    public void setType(Long type) {
+    public void setType(int type) {
         this.type = type;
     }
 

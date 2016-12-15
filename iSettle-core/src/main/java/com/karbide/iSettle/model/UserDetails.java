@@ -19,11 +19,13 @@ public class UserDetails implements Serializable{
     private String picture;
     private Long acc_id;
     private Date last_login;
-    private Long status;
+    private int status;
     private Date create_time;
     private Date update_time;
     private String ph_no;
 
+    @ManyToOne(cascade = CascadeType.DETACH,  fetch= FetchType.EAGER,optional = false)
+    @JoinColumn(name = "status", referencedColumnName = "status",insertable=false, updatable=false)
     private UserStatus userStatus;
 
     public Long getId() {
@@ -82,11 +84,11 @@ public class UserDetails implements Serializable{
         this.last_login = last_login;
     }
 
-    public Long getStatus() {
+    public int getStatus() {
         return status;
     }
 
-    public void setStatus(Long status) {
+    public void setStatus(int status) {
         this.status = status;
     }
 
@@ -115,8 +117,7 @@ public class UserDetails implements Serializable{
         this.ph_no = ph_no;
     }
 
-    @ManyToOne(cascade = CascadeType.ALL,fetch = FetchType.EAGER)
-    @JoinColumn(name = "status")
+
     public UserStatus getUserStatus() {
         return userStatus;
     }

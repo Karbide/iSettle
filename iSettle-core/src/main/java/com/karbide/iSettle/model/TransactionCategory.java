@@ -14,16 +14,16 @@ public class TransactionCategory implements Serializable {
 
     @Id
     @GeneratedValue
-    private Long category;
+    private int category;
     private String category_display_name;
     private boolean active;
     private Date update_time;
 
-    public Long getCategory() {
+    public int getCategory() {
         return category;
     }
 
-    public void setCategory(Long category) {
+    public void setCategory(int category) {
         this.category = category;
     }
 

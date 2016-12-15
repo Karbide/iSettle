@@ -16,4 +16,13 @@ public interface UserDetailsRepository extends JpaRepository<UserDetails, Long> 
         @Query("select u from UserDetails u where u.acc_id in (?1)")
         public List<UserDetails> findByAcc_id(List<Long> acc_id);
 
+        @Query("select u from UserDetails u where u.acc_id in (?1)")
+        UserDetails findByAcc_id(Long acc_id);
+
+        @Query("select u from UserDetails u where u.login_app_id in (?1)")
+        public UserDetails findByLoginAppId(String login_app_id);
+
+        @Query("select u from UserDetails u where u.ph_no in (?1)")
+        public UserDetails findByPhNo(String ph_no);
+
 }

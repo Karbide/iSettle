@@ -22,19 +22,30 @@ public class AccountTransaction implements Serializable{
     private Long src_acc_id;
     private Long tgt_acc_id;
     private float amt;
-    private String trn_type;
-    private String trn_status;
-    private boolean trn_visible;
-    private String trn_category;
+    private int trn_type;
+    private int trn_status;
+    private Boolean trn_visible;
+    private int trn_category;
     private int trn_remind_days;
     private String trn_pic;
     private String trn_notes;
     private Date update_time;
     private Date create_time;
     private int currency_code;
+    @ManyToOne(cascade = CascadeType.DETACH,  fetch= FetchType.EAGER,optional = false)
+    @JoinColumn(name = "trn_type", referencedColumnName = "type",insertable=false, updatable=false)
     private TransactionType transactionType;
+
+    @ManyToOne(cascade = CascadeType.DETACH,  fetch= FetchType.EAGER,optional = false)
+    @JoinColumn(name = "trn_category", referencedColumnName = "category",insertable=false, updatable=false)
     private TransactionCategory transactionCategory;
+
+    @ManyToOne(cascade = CascadeType.DETACH,  fetch= FetchType.EAGER,optional = false)
+    @JoinColumn(name = "trn_status", referencedColumnName = "status",insertable=false, updatable=false)
     private TransactionStatus transactionStatus;
+
+    @ManyToOne(cascade = CascadeType.DETACH,  fetch= FetchType.EAGER,optional = false)
+    @JoinColumn(name = "currency_code", referencedColumnName = "currency_code",insertable=false, updatable=false)
     private CurrencyMaster currencyMaster;
 
     public Long getId() {
@@ -77,36 +88,44 @@ public class AccountTransaction implements Serializable{
         this.amt = amt;
     }
 
-    public String getTrn_type() {
+    public int getTrn_type() {
         return trn_type;
     }
 
-    public void setTrn_type(String trn_type) {
+    public void setTrn_type(int trn_type) {
         this.trn_type = trn_type;
     }
 
-    public String getTrn_status() {
+    public int getTrn_status() {
         return trn_status;
     }
 
-    public void setTrn_status(String trn_status) {
+    public void setTrn_status(int trn_status) {
         this.trn_status = trn_status;
     }
 
-    public boolean isTrn_visible() {
+    public Boolean isTrn_visible() {
         return trn_visible;
     }
 
-    public void setTrn_visible(boolean trn_visible) {
+    public void setTrn_visible(Boolean trn_visible) {
         this.trn_visible = trn_visible;
     }
 
-    public String getTrn_category() {
+    public int getTrn_category() {
         return trn_category;
     }
 
-    public void setTrn_category(String trn_category) {
+    public void setTrn_category(int trn_category) {
         this.trn_category = trn_category;
+    }
+
+    public int getCurrency_code() {
+        return currency_code;
+    }
+
+    public void setCurrency_code(int currency_code) {
+        this.currency_code = currency_code;
     }
 
     public int getTrn_remind_days() {
@@ -149,8 +168,7 @@ public class AccountTransaction implements Serializable{
         this.create_time = create_time;
     }
 
-    @ManyToOne(cascade = CascadeType.ALL,fetch = FetchType.EAGER)
-    @JoinColumn(name = "trn_type")
+
     public TransactionType getTransactionType() {
         return transactionType;
     }
@@ -159,8 +177,6 @@ public class AccountTransaction implements Serializable{
         this.transactionType = transactionType;
     }
 
-    @ManyToOne(cascade = CascadeType.ALL,fetch = FetchType.EAGER)
-    @JoinColumn(name = "trn_category")
     public TransactionCategory getTransactionCategory() {
         return transactionCategory;
     }
@@ -169,8 +185,6 @@ public class AccountTransaction implements Serializable{
         this.transactionCategory = transactionCategory;
     }
 
-    @ManyToOne(cascade = CascadeType.ALL,fetch = FetchType.EAGER)
-    @JoinColumn(name = "trn_status")
     public TransactionStatus getTransactionStatus() {
         return transactionStatus;
     }
@@ -179,12 +193,13 @@ public class AccountTransaction implements Serializable{
         this.transactionStatus = transactionStatus;
     }
 
+    //@ManyToOne(cascade = CascadeType.DETACH,fetch = FetchType.EAGER)
+    //@JoinColumn(name = "currency_code")
     public CurrencyMaster getCurrencyMaster() {
         return currencyMaster;
     }
 
-    @ManyToOne(cascade = CascadeType.ALL,fetch = FetchType.EAGER)
-    @JoinColumn(name = "trn_status")
+
     public void setCurrencyMaster(CurrencyMaster currencyMaster) {
         this.currencyMaster = currencyMaster;
     }

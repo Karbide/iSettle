@@ -15,16 +15,16 @@ public class UserStatus implements Serializable{
 
         @Id
         @GeneratedValue(strategy = GenerationType.AUTO)
-        private Long status;
+        private int status;
         private String status_display_name;
         private boolean active;
         private Date update_time;
 
-    public Long getId() {
+    public int getId() {
         return status;
     }
 
-    public void setId(Long id) {
+    public void setId(int id) {
         this.status = id;
     }
 

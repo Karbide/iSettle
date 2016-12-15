@@ -14,16 +14,16 @@ public class TransactionStatus implements Serializable {
 
     @Id
     @GeneratedValue
-    private Long status;
+    private int status;
     private String status_display_name;
     private boolean active;
     private Date update_time;
 
-    public Long getStatus() {
+    public int getStatus() {
         return status;
     }
 
-    public void setStatus(Long status) {
+    public void setStatus(int status) {
         this.status = status;
     }
 
